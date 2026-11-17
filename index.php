@@ -2,11 +2,6 @@
 // Conexão com o banco de dados
 $conexao = new mysqli("localhost", "root", "", "achados_perdidos");
 
-// Verificar conexão
-if ($conexao->connect_error) {
-    die("Erro ao conectar com o banco de dados");
-}
-
 // Buscar os objetos cadastrados
 $sql = "SELECT * FROM objetos";
 $resultado = $conexao->query($sql);
