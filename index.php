@@ -1,7 +1,6 @@
 <?php
-$conexao = new mysqli("localhost", "root", "", "achados_perdidos");
+$conexao = new mysqli("localhost", "achados_perdidos");
 
-// Buscar os objetos cadastrados
 $sql = "SELECT * FROM objetos";
 $resultado = $conexao->query($sql);
 ?>
@@ -37,7 +36,7 @@ $resultado = $conexao->query($sql);
             </tr>
 
              <?php
-    
+         // Mostrar os objetos na tabela
             while ($linha = $resultado->fetch_assoc()) {
             ?>
 
