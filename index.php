@@ -1,5 +1,4 @@
 <?php
-// Conexão com o banco de dados
 $conexao = new mysqli("localhost", "root", "", "achados_perdidos");
 
 // Buscar os objetos cadastrados
@@ -38,7 +37,7 @@ $resultado = $conexao->query($sql);
             </tr>
 
              <?php
-            // Mostrar os objetos na tabela
+    
             while ($linha = $resultado->fetch_assoc()) {
             ?>
 
