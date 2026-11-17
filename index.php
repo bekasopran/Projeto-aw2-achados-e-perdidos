@@ -1,3 +1,17 @@
+<?php
+// Conexão com o banco de dados
+$conexao = new mysqli("localhost", "root", "", "achados_perdidos");
+
+// Verificar conexão
+if ($conexao->connect_error) {
+    die("Erro ao conectar com o banco de dados");
+}
+
+// Buscar os objetos cadastrados
+$sql = "SELECT * FROM objetos";
+$resultado = $conexao->query($sql);
+?>
+
 <!DOCTYPE html>
 <html lang="PT">
 <head>
@@ -28,7 +42,22 @@
                 <th>Situação</th>
             </tr>
 
-            
+             <?php
+            // Mostrar os objetos na tabela
+            while ($linha = $resultado->fetch_assoc()) {
+            ?>
+
+            <tr>
+                <td><?php echo $linha['nome']; ?></td>
+                <td><?php echo $linha['descricao']; ?></td>
+                <td><?php echo $linha['local']; ?></td>
+                <td><?php echo $linha['data']; ?></td>
+                <td><?php echo $linha['situacao']; ?></td>
+            </tr>
+
+            <?php
+            }
+            ?>
 
         </table>
     </main>
