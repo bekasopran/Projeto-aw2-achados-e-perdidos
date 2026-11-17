@@ -43,7 +43,7 @@ $resultado = $conexao->query($sql);
             ?>
 
             <tr>
-                <td><?php echo $linha['nome']; ?></td>
+                <td><?php echo $linha['objeto']; ?></td>
                 <td><?php echo $linha['descricao']; ?></td>
                 <td><?php echo $linha['local']; ?></td>
                 <td><?php echo $linha['data']; ?></td>
